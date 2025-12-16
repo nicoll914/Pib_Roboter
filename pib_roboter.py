@@ -26,12 +26,11 @@ def moveDigits(digits, position):
     for digit in digits:
         digit.setPosition(position)
 
-def closeDigitsTimed(digits, sleepTime):
-    position=0.0
-    while position<=3.4:
+def moveDigitsTimed(digits, startPosition, endPosition, sleepTime):
+    while startPosition<=endPosition:
         for digit in digits:
-            digit.setPosition(position)
-        position=position+0.1
+            digit.setPosition(startPosition)
+        startPosition=startPosition+0.1
         time.sleep(sleepTime)
 
 # You should insert a getDevice-like function in order to get the
@@ -59,7 +58,7 @@ while True:
     t = robot.step(timestep)
     if t == -1:
         break
-    closeDigitsTimed([thumb_left_p,index_left_p,middle_left_p,ring_left_p,pinky_left_p,
-                 thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d], 0.2)
+    moveDigitsTimed([thumb_left_p,index_left_p,middle_left_p,ring_left_p,pinky_left_p,
+                 thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d], 0, 3.4, 0.2)
 
 # Enter here exit cleanup code.
