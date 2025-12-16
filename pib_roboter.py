@@ -51,6 +51,10 @@ ring_left_d = robot.getDevice('ring_left_distal')
 pinky_left_d = robot.getDevice('pinky_left_distal')
 #motor4= robot.getDevice('ring_left_distal')
 
+thumb_left_o = robot.getDevice('thumb_left_opposition')
+
+moveDigits([thumb_left_o], 0.0)
+
 moveDigits([thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d], 0.0)
 
 # - perform simulation steps until Webots is stopping the controller
@@ -59,6 +63,6 @@ while True:
     if t == -1:
         break
     moveDigitsTimed([thumb_left_p,index_left_p,middle_left_p,ring_left_p,pinky_left_p,
-                 thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d], 0, 3.4, 0.2)
+                 thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d,thumb_left_o], 0, 3.4, 0.2)
 
 # Enter here exit cleanup code.
