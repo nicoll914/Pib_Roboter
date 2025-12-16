@@ -52,27 +52,22 @@ middle_left_d.setPosition(0.0)
 ring_left_d.setPosition(0.0)
 pinky_left_d.setPosition(0.0)
 position=0.0
+
+def closeDigits(digits, sleepTime):
+    position=0.0
+    while position<=3.4:
+        for digit in digits:
+            digit.setPosition(position)
+        position=position+0.1
+        time.sleep(sleepTime)
+
  
 # - perform simulation steps until Webots is stopping the controller
 while True:
     t = robot.step(timestep)
     if t == -1:
         break
-    #print(t)
-    thumb_left_p.setPosition(position)
-    index_left_p.setPosition(position)
-    middle_left_p.setPosition(position)
-    ring_left_p.setPosition(position)
-    pinky_left_p.setPosition(position)
-   
-    thumb_left_d.setPosition(position)
-    index_left_d.setPosition(position)
-    middle_left_d.setPosition(position)
-    ring_left_d.setPosition(position)
-    pinky_left_d.setPosition(position)
-    time.sleep(0.2)
-    position=position+0.1
-    #motor.setPosition(0.0)
-        #time.sleep(1000)
+    closeDigits([thumb_left_p,index_left_p,middle_left_p,ring_left_p,pinky_left_p,
+                 thumb_left_d,index_left_d,middle_left_d,ring_left_d,pinky_left_d], 0,2)
  
 # Enter here exit cleanup code.
