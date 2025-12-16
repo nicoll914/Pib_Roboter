@@ -35,21 +35,8 @@ def moveDigitsTimed(digits, startPosition, endPosition, sleepTime):
 
 # You should insert a getDevice-like function in order to get the
 # instance of a device of the robot. Something like:
-thumb_left_p = robot.getDevice('thumb_left_proximal')
-index_left_p = robot.getDevice('index_left_proximal')
-middle_left_p = robot.getDevice('middle_left_proximal')
-ring_left_p = robot.getDevice('ring_left_proximal')
-pinky_left_p = robot.getDevice('pinky_left_proximal')
-#motor4= robot.getDevice('ring_left_distal')
 
-moveDigits([thumb_left_p,index_left_p,middle_left_p,ring_left_p,pinky_left_p], 0.0)
 
-thumb_left_d = robot.getDevice('thumb_left_distal')
-index_left_d = robot.getDevice('index_left_distal')
-middle_left_d = robot.getDevice('middle_left_distal')
-ring_left_d = robot.getDevice('ring_left_distal')
-pinky_left_d = robot.getDevice('pinky_left_distal')
-#motor4= robot.getDevice('ring_left_distal')
 
 thumb_left_o = robot.getDevice('thumb_left_opposition')
 
