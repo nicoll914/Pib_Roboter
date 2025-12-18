@@ -1,7 +1,6 @@
 from controller import Robot, Camera
 import time
 import math
-import pib_ik
 
 robot = Robot()
 
@@ -47,103 +46,94 @@ pinky_right_p = robot.getDevice('pinky_right_proximal')
 pinky_right_d = robot.getDevice('pinky_right_distal')
 
 #linken Arm senken
-start_pos_v_shoulder_left = math.radians(-90)  
-start_pos_h_shoulder_left = math.radians(90)
-start_pos_elbow_left = math.radians(-45)
-
-shoulder_v_left.setPosition(start_pos_v_shoulder_left)
-shoulder_h_left.setPosition(start_pos_h_shoulder_left)
-
-elbow_left.setPosition(start_pos_elbow_left)
+shoulder_v_left.setPosition(math.radians(-90))
+shoulder_h_left.setPosition(math.radians(90))
+elbow_left.setPosition(math.radians(-45))
 
 #Stift greifen
-start_pos_v_shoulder = math.radians(-90)  
-start_pos_h_shoulder = math.radians(90)
-start_pos_elbow = math.radians(45)
-start_pos_finger = math.radians(90)
+shoulder_v_right.setPosition(math.radians(-90))
+shoulder_h_right.setPosition(math.radians(90))
+elbow_right.setPosition(math.radians(45))
+thumb_right_p.setPosition(math.radians(90))
+thumb_right_d.setPosition(math.radians(90))
+thumb_right_o.setPosition(math.radians(90))
+index_right_d.setPosition(math.radians(90))
+index_right_p.setPosition(math.radians(90))
+middle_right_p.setPosition(math.radians(90))
+middle_right_d.setPosition(math.radians(90))
+ring_right_p.setPosition(math.radians(90))
+ring_right_d.setPosition(math.radians(90))
+pinky_right_p.setPosition(math.radians(90))
+pinky_right_d.setPosition(math.radians(90))
 
-shoulder_v_right.setPosition(start_pos_v_shoulder)
-shoulder_h_right.setPosition(start_pos_h_shoulder)
-
-elbow_right.setPosition(start_pos_elbow)
-
-thumb_right_p.setPosition(start_pos_finger)
-thumb_right_d.setPosition(start_pos_finger)
-thumb_right_o.setPosition(start_pos_finger)
-
-index_right_d.setPosition(start_pos_finger)
-index_right_p.setPosition(start_pos_finger)
-
-middle_right_p.setPosition(start_pos_finger)
-middle_right_d.setPosition(start_pos_finger)
-
-ring_right_p.setPosition(start_pos_finger)
-ring_right_d.setPosition(start_pos_finger)
-
-pinky_right_p.setPosition(start_pos_finger)
-pinky_right_d.setPosition(start_pos_finger)
-
+#rechts unten
 wait(1)
+shoulder_v_right.setPosition(math.radians(-19))
+shoulder_h_right.setPosition(math.radians(6))
+upper_arm_right.setPosition(math.radians(-19))
+elbow_right.setPosition(math.radians(-90))
+fore_arm_right.setPosition(math.radians(90))
 
-#senkrechter Strich vorwärts mit 1 Sekunde Verzögerung 
-pos_v_shoulder = math.radians(-45)
-pos_elbow = math.radians(-20)
-
+#links unten
 wait(1)
-shoulder_v_right.setPosition(pos_v_shoulder)
-elbow_right.setPosition(pos_elbow)
-    
-#senkrechter Strich rückwärts mit 1 Sekunde Verzögerung 
-pos_v_shoulder = math.radians(-90)
-pos_elbow = math.radians(45)
+shoulder_v_right.setPosition(math.radians(36))
+shoulder_h_right.setPosition(math.radians(-18))
+upper_arm_right.setPosition(math.radians(-90))
+elbow_right.setPosition(math.radians(-72))
+fore_arm_right.setPosition(math.radians(90))
 
+#rechts oben
 wait(1)
-shoulder_v_right.setPosition(pos_v_shoulder)
-elbow_right.setPosition(pos_elbow)
+shoulder_v_right.setPosition(math.radians(60))
+shoulder_h_right.setPosition(math.radians(0))
+upper_arm_right.setPosition(math.radians(-19))
+elbow_right.setPosition(math.radians(-68))
+fore_arm_right.setPosition(math.radians(90))
 
-#waagerechter Strich links mit 0,5 Sekunden Verzögerung
-pos_v_shoulder = math.radians(-70)
-pos_upper_arm = math.radians(50)
-pos_elbow = math.radians(25)
-pos_fore_arm = math.radians(-25)
-
-elbow_right.setPosition(pos_elbow)
-upper_arm_right.setPosition(pos_upper_arm)
-shoulder_v_right.setPosition(pos_v_shoulder)
-fore_arm_right.setPosition(pos_fore_arm)
-
-#waagerechter Strich links mit 1 Sekunde Verzögerung 
-pos_v_shoulder = math.radians(-40)
-pos_upper_arm = math.radians(90)
-pos_elbow = math.radians(20)
-pos_fore_arm = math.radians(-45)
-
+#links oben
 wait(1)
-elbow_right.setPosition(pos_elbow)
-upper_arm_right.setPosition(pos_upper_arm)
-shoulder_v_right.setPosition(pos_v_shoulder)
-fore_arm_right.setPosition(pos_fore_arm)
+shoulder_v_right.setPosition(math.radians(51))
+shoulder_h_right.setPosition(math.radians(-59))
+upper_arm_right.setPosition(math.radians(-90))
+elbow_right.setPosition(math.radians(-43))
+fore_arm_right.setPosition(math.radians(90))
 
-#waagerechter Strich rechts mit 0,5 Sekunden Verzögerung
-pos_v_shoulder = math.radians(-70)
-pos_upper_arm = math.radians(50)
-pos_elbow = math.radians(25)
-pos_fore_arm = math.radians(-25)
-
-elbow_right.setPosition(pos_elbow)
-upper_arm_right.setPosition(pos_upper_arm)
-shoulder_v_right.setPosition(pos_v_shoulder)
-fore_arm_right.setPosition(pos_fore_arm)
-
-#waagerechter Strich rechts mit 1 Sekunde Verzögerung 
-pos_v_shoulder = math.radians(-90)
-pos_upper_arm = math.radians(0)
-pos_elbow = math.radians(45)
-pos_fore_arm = math.radians(0)
-
+#Spitze
 wait(1)
-elbow_right.setPosition(pos_elbow)
-upper_arm_right.setPosition(pos_upper_arm)
-shoulder_v_right.setPosition(pos_v_shoulder)
-fore_arm_right.setPosition(pos_fore_arm)
+shoulder_v_right.setPosition(math.radians(60))
+shoulder_h_right.setPosition(math.radians(-15))
+upper_arm_right.setPosition(math.radians(-90))
+elbow_right.setPosition(math.radians(-38))
+fore_arm_right.setPosition(math.radians(90))
 
+#rechts oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(60))
+shoulder_h_right.setPosition(math.radians(0))
+upper_arm_right.setPosition(math.radians(-19))
+elbow_right.setPosition(math.radians(-68))
+fore_arm_right.setPosition(math.radians(90))
+
+#rechts unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(-19))
+shoulder_h_right.setPosition(math.radians(6))
+upper_arm_right.setPosition(math.radians(-19))
+elbow_right.setPosition(math.radians(-90))
+fore_arm_right.setPosition(math.radians(90))
+
+#links oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(51))
+shoulder_h_right.setPosition(math.radians(-59))
+upper_arm_right.setPosition(math.radians(-90))
+elbow_right.setPosition(math.radians(-43))
+fore_arm_right.setPosition(math.radians(90))
+
+#links unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(36))
+shoulder_h_right.setPosition(math.radians(-18))
+upper_arm_right.setPosition(math.radians(-90))
+elbow_right.setPosition(math.radians(-72))
+fore_arm_right.setPosition(math.radians(90))
