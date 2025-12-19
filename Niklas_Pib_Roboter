@@ -1,0 +1,141 @@
+from controller import Robot, Camera
+import time
+import math
+
+robot = Robot()
+
+#Pause bereitstellen
+timestep = int(robot.getBasicTimeStep())
+def wait(seconds):
+    steps = int(seconds * 1000 / timestep)
+    for _ in range(steps):
+        if robot.step(timestep) == -1:
+            return
+
+#linkes Armgelenke initialisieren
+elbow_left = robot.getDevice('elbow_left')
+shoulder_h_left = robot.getDevice('shoulder_horizontal_left')
+shoulder_v_left = robot.getDevice('shoulder_vertical_left')
+
+#rechtes Armgelenke initialisieren
+elbow_right = robot.getDevice('elbow_right')
+shoulder_h_right = robot.getDevice('shoulder_horizontal_right')
+shoulder_v_right = robot.getDevice('shoulder_vertical_right')
+upper_arm_right = robot.getDevice('upper_arm_right')
+fore_arm_right = robot.getDevice('forearm_right')
+
+# Daumen initialisieren
+thumb_right_o = robot.getDevice('thumb_right_opposition')
+thumb_right_p = robot.getDevice('thumb_right_proximal')
+thumb_right_d = robot.getDevice('thumb_right_distal')
+
+# Zeigefinger initialisieren
+index_right_p = robot.getDevice('index_right_proximal')
+index_right_d = robot.getDevice('index_right_distal')
+
+#Mittelfinger initialisieren
+middle_right_p = robot.getDevice('middle_right_proximal')
+middle_right_d = robot.getDevice('middle_right_distal')
+
+# Ringfinger initialisieren
+ring_right_p = robot.getDevice('ring_right_proximal')
+ring_right_d = robot.getDevice('ring_right_distal')
+
+# Kleiner Finger initialisieren
+pinky_right_p = robot.getDevice('pinky_right_proximal')
+pinky_right_d = robot.getDevice('pinky_right_distal')
+
+#linken Arm senken
+shoulder_v_left.setPosition(math.radians(-90))
+shoulder_h_left.setPosition(math.radians(90))
+elbow_left.setPosition(math.radians(-45))
+
+#Stift greifen
+shoulder_v_right.setPosition(math.radians(-90))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(0))
+elbow_right.setPosition(math.radians(45))
+fore_arm_right.setPosition(math.radians(0))
+thumb_right_p.setPosition(math.radians(90))
+thumb_right_d.setPosition(math.radians(90))
+thumb_right_o.setPosition(math.radians(90))
+index_right_d.setPosition(math.radians(90))
+index_right_p.setPosition(math.radians(90))
+middle_right_p.setPosition(math.radians(90))
+middle_right_d.setPosition(math.radians(90))
+ring_right_p.setPosition(math.radians(90))
+ring_right_d.setPosition(math.radians(90))
+pinky_right_p.setPosition(math.radians(90))
+pinky_right_d.setPosition(math.radians(90))
+
+#rechts unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(-90))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(0))
+elbow_right.setPosition(math.radians(45))
+fore_arm_right.setPosition(math.radians(0))
+
+#links unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(-40))
+shoulder_h_right.setPosition(math.radians(80))
+upper_arm_right.setPosition(math.radians(90))
+elbow_right.setPosition(math.radians(25))
+fore_arm_right.setPosition(math.radians(-45))
+
+#rechts oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(-70))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(0))
+elbow_right.setPosition(math.radians(20))
+fore_arm_right.setPosition(math.radians(0))
+
+#links oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(-40))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(90))
+elbow_right.setPosition(math.radians(0))
+fore_arm_right.setPosition(math.radians(-45))
+
+#Spitze
+wait(1)
+shoulder_v_right.setPosition(math.radians(-50))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(45))
+elbow_right.setPosition(math.radians(0))
+fore_arm_right.setPosition(math.radians(-45))
+
+#rechts oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(-70))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(0))
+elbow_right.setPosition(math.radians(20))
+fore_arm_right.setPosition(math.radians(0))
+
+#rechts unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(-90))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(0))
+elbow_right.setPosition(math.radians(45))
+fore_arm_right.setPosition(math.radians(0))
+
+#links oben
+wait(1)
+shoulder_v_right.setPosition(math.radians(-40))
+shoulder_h_right.setPosition(math.radians(90))
+upper_arm_right.setPosition(math.radians(90))
+elbow_right.setPosition(math.radians(0))
+fore_arm_right.setPosition(math.radians(-45))
+
+#links unten
+wait(1)
+shoulder_v_right.setPosition(math.radians(-40))
+shoulder_h_right.setPosition(math.radians(80))
+upper_arm_right.setPosition(math.radians(90))
+elbow_right.setPosition(math.radians(25))
+fore_arm_right.setPosition(math.radians(-45))
